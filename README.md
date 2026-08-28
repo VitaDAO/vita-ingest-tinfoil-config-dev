@@ -4,6 +4,7 @@ Public, development-only Tinfoil configuration for testing Vita Ingest changes w
 
 ## Current candidate
 
+- Baseline config: `VitaDAO/vita-ingest-tinfoil-config-staging` release `v0.1.4`
 - Vita App PR: [VitaDAO/vita-app#277](https://github.com/VitaDAO/vita-app/pull/277)
 - Source: `7193ba9805d9c561f244819901be32670bb977e1`
 - Image: `ghcr.io/vitadao/vita-ingest@sha256:1ae10c0c38bce7f93ab4c2f4e7ca0bbde61f3b0edbb02a8cc7251f5ffe57b29d`
@@ -12,9 +13,9 @@ Public, development-only Tinfoil configuration for testing Vita Ingest changes w
 
 ## Safety boundary
 
-- Debug and synthetic/test data only. Do not use production users, health data, OAuth applications, Supabase credentials, or connection tokens.
+- Debug and synthetic/test data only. Do not use production users or real health data.
 - Secret values belong in Tinfoil's encrypted secret store, never in Git, issues, pull requests, screenshots, or logs.
-- This repository uses only the `STAGING_*` Supabase and connection-token secret names.
+- This candidate intentionally uses the existing `STAGING_*` Supabase and connection-token secret names so it can exercise the migration already applied to staging. Its service-role access is therefore not data-plane isolated from staging; use only dedicated synthetic test users.
 - Production and staging configuration repositories, releases, containers, domains, and tags remain separate.
 - Tinfoil container lifecycle actions are performed by an authorized human in the dashboard.
 
@@ -34,7 +35,7 @@ WITHINGS_CLIENT_ID
 WITHINGS_CLIENT_SECRET
 ```
 
-The wearable credentials must belong to dedicated test OAuth applications or provider sandboxes. Register these callbacks:
+Before deployment, confirm the wearable secret names resolve to staging/test OAuth applications that permit these callbacks. Do not deploy if they resolve to production-only OAuth applications.
 
 ```text
 https://vita-ingest-dev.debug.vitality-now.containers.tinfoil.dev/api/wearable/oura/callback
@@ -50,6 +51,7 @@ After review and merge, run **Actions → Tinfoil Release** with an unused devel
 
 ```bash
 VITE_VITA_INGEST_URL=https://vita-ingest-dev.debug.vitality-now.containers.tinfoil.dev \
+VITE_VITA_INGEST_CONFIG_REPO=VitaDAO/vita-ingest-tinfoil-config-dev \
 VITE_VITA_ALLOW_DEBUG_INGEST=1 \
 npm run dev -- --host 127.0.0.1 --port 8080
 ```
