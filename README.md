@@ -6,8 +6,8 @@ Public, development-only Tinfoil configuration for testing Vita Ingest changes w
 
 - Baseline config: `VitaDAO/vita-ingest-tinfoil-config-staging` release `v0.1.4`
 - Vita App PR: [VitaDAO/vita-app#277](https://github.com/VitaDAO/vita-app/pull/277)
-- Source: `7193ba9805d9c561f244819901be32670bb977e1`
-- Image: `ghcr.io/vitadao/vita-ingest@sha256:1ae10c0c38bce7f93ab4c2f4e7ca0bbde61f3b0edbb02a8cc7251f5ffe57b29d`
+- Source: `420e816de77a67aef11b2d77aa2a9c472c7f46df`
+- Image: `ghcr.io/vitadao/vita-ingest@sha256:c6abd0bf595dfdad98e28be5a7f6144fd247a47f13ee5e26088a7cf6c46db471`
 - Container name: `vita-ingest-dev`
 - URL: `https://vita-ingest-dev.debug.vitality-now.containers.tinfoil.dev`
 
