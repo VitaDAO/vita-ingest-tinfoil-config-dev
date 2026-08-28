@@ -45,7 +45,7 @@ https://vita-ingest-dev.debug.vitality-now.containers.tinfoil.dev/api/wearable/w
 
 ## Release
 
-After review and merge, run **Actions → Tinfoil Release** with an unused development version such as `v0.0.1`. Publishing a release does not deploy it. An authorized human then creates or updates only the development container through the Tinfoil dashboard.
+After review and merge, run **Actions → Tinfoil Release** with an unused development version such as `v0.0.2`. Publishing a release does not deploy it. An authorized human then creates or updates only the development container through the Tinfoil dashboard.
 
 ## Local browser
 
