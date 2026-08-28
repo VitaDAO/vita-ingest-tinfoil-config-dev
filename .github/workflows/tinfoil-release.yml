@@ -42,8 +42,8 @@ jobs:
           grep -q 'STAGING_SUPABASE_URL' tinfoil-config.yml
           grep -q 'STAGING_SUPABASE_SECRET_KEY' tinfoil-config.yml
           grep -q 'STAGING_CONNECTION_TOKEN_KEK' tinfoil-config.yml
-          grep -q 'pr277@131df139796f42a3364213f34b35d2c47f836320' tinfoil-config.yml
-          grep -q 'image: "ghcr.io/vitadao/vita-ingest:sha-131df13@sha256:e11df4981502a1ec13927ab38beb70667d46c8d77d7365af24cbb82e75bef541"' tinfoil-config.yml
+          grep -q 'pr277@8f460bcf8aa5d2eb8dc226ab31f9bf01c0d1d671' tinfoil-config.yml
+          grep -q 'image: "ghcr.io/vitadao/vita-ingest:sha-8f460bc@sha256:c9242ac34d5065ad079344c70e5186640a73e86fbace2a0dda1d17bd906157f0"' tinfoil-config.yml
           if grep -Eq '(^|[^A-Z_])(SUPABASE_SERVICE_ROLE_KEY|CONNECTION_TOKEN_KEK)([^A-Z_]|$)' tinfoil-config.yml; then
             echo "::error::Refusing production secret names in the development manifest"
             exit 1
