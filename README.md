@@ -6,8 +6,8 @@ Public, development-only Tinfoil configuration for testing Vita Ingest changes w
 
 - Baseline config: `VitaDAO/vita-ingest-tinfoil-config-staging` release `v0.1.4`
 - Vita App PR: [VitaDAO/vita-app#277](https://github.com/VitaDAO/vita-app/pull/277)
-- Source: `b45b1b8e7f23a9ebdcacf85bd705c43f5cdd93c9`
-- Image: `ghcr.io/vitadao/vita-ingest@sha256:6a3c9ea4ae491421b11b34e01e9988b4ca3573960c0d3b8275a896ee1b71e71d`
+- Source: `59571871d366d225cd8c448b84e1160ac4608682`
+- Image: `ghcr.io/vitadao/vita-ingest@sha256:c7ca7061fd8e4f53c26b6b5cd7d8d0995802e4d9c8e530664e386bdad53ca86d`
 - Container name: `vita-ingest-dev`
 - URL: `https://vita-ingest-dev.debug.vitality-now.containers.tinfoil.dev`
 
@@ -45,7 +45,7 @@ https://vita-ingest-dev.debug.vitality-now.containers.tinfoil.dev/api/wearable/w
 
 ## Release
 
-After review and merge, run **Actions → Tinfoil Release** with an unused development version such as `v0.0.5`. Publishing a release does not deploy it. An authorized human then creates or updates only the development container through the Tinfoil dashboard.
+After review and merge, run **Actions → Tinfoil Release** with unused development version `v0.0.6`. Publishing a release does not deploy it. An authorized human then creates or updates only the development container through the Tinfoil dashboard.
 
 ## Local browser
 
